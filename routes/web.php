@@ -25,3 +25,8 @@ Route::get('/home', 'HomeController@index')
 
 Route::get('/play', 'PlayController@index')
     ->name('play');
+
+Route::get('/new', 'PlayController@newGame')
+    ->name('new');
+
+

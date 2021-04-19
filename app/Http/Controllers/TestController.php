@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Alleop;
 use App\Models\Creature;
 use Illuminate\Http\Request;
 
@@ -9,7 +10,7 @@ class TestController extends Controller
 {
     public function index()
     {
-        $ss = Creature::with('skills')->where('name', 'Vaderus')->first();
+        $ss = Alleop::with('hero', 'monster')->find(1);
         dd($ss);
     }
 }
