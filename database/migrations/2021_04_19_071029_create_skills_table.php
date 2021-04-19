@@ -17,6 +17,7 @@ class CreateSkillsTable extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedSmallInteger('chance')->default(10);
+            $table->text('description')->nullable();
             $table->timestamps();
             $table->engine = "InnoDB";
         });

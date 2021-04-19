@@ -18,10 +18,14 @@ class SkillSeeder extends Seeder
             [
                 'name' => 'Rapid strike',
                 'chance' => 10,
+                'description' => 'Strike twice while it’s his turn to attack; there’s a 10% chance
+he’ll use this skill every time he attacks'
             ],
             [
                 'name' => 'Magic shield',
                 'chance' => 20,
+                'description' => 'Takes only half of the usual damage when an enemy attacks;
+there’s a 20% change he’ll use this skill every time he defends.'
             ],
         ];
 
