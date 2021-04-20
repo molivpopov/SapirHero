@@ -18,6 +18,7 @@ class CreateAlleopTable extends Migration
             $table->unsignedInteger('game');
             $table->unsignedInteger('turn');
             $table->unsignedBigInteger('hero_id');
+            $table->unsignedBigInteger('attacker_id')->nullable();
             $table->float('health_hero')->default(0);
             $table->float('damage_hero')->nullable();
             $table->string('used_skills')->nullable();

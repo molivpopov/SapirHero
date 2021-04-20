@@ -22,7 +22,7 @@ trait Engine
             'turn' => $turn,
             'hero_id' => $hero->id,
             'monster_id' => $monster->id,
-            'status' => 'playing',
+            'status' => env('MAX_TURNS') == $turn ? 'finished' : 'playing',
             'used_skills' => $hero->skills,
         ])->id;
 
@@ -77,6 +77,7 @@ trait Engine
 
         $alleop->damage_hero = $heroDamage;
         $alleop->damage_monster = $monsterDamage;
+        $alleop->attacker_id = $$attacker->id;
 
         $alleop->save();
 

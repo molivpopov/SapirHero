@@ -16,9 +16,13 @@ class PlayController extends Controller
             ->whereIn('status', ['playing', 'finished'])
             ->get();
 
-        $game = $alleop->isNotEmpty() ? $alleop[0]->game : 0;
+        $game = $alleop->last();
 
-        return view('play', compact('alleop', 'game'));
+        $startProperties = session('startProperties');
+
+        //dd($startProperties);
+
+        return view('play', compact('alleop', 'game', 'startProperties'));
     }
 
     public function newGame()
@@ -28,11 +32,17 @@ class PlayController extends Controller
 
         $ret = $this->nextTurn(Alleop::max('game') + 1, 1);
 
+        session(['startProperties' => $ret]);
+
         return redirect()->route('play');
     }
 
     public function turn()
     {
+        $ret = $this->nextTurn(Alleop::max('game'));
 
+        session(['startProperties' => $ret]);
+
+        return redirect()->route('play');
     }
 }

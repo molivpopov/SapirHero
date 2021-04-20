@@ -2,14 +2,30 @@
 
 @php($active = 'Gameplay')
 
+@section('styles')
+    <style>
+        .hidden-damage {
+            display: none;
+        }
+
+        .back-progress{
+            transform: rotate(180deg);
+        }
+
+        .attacker-name{
+            color: red;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">
-                        @if(isset($alleop) && $alleop->isNotEmpty())
-                            <span class="mr-2">game# {{$game}}</span> <a href="#">turn</a>
+                        @if(isset($alleop) && $alleop->isNotEmpty() && $game->status != 'finished')
+                            <span class="mr-2">game# {{$game->game}}</span> <a href="{{route('next')}}">turn</a>
                         @else
                             <a href="{{route('new')}}">new game</a>
                         @endif
@@ -34,10 +50,14 @@
                                 </thead>
                                 <tbody>
                                 @foreach($alleop as $turn)
-                                    <tr>
+                                    <tr @if($loop->last) id="actual-turn" @endif>
                                         <td>{{$turn->turn}}</td>
-                                        <td>{{$turn->health_hero}}</td>
-                                        <td>{{$turn->hero->name}}</td>
+                                        @if($loop->last)
+                                            <td data="{{$turn->health_hero}}">{{isset($startProperties) ?$startProperties->hero->health : ''}}</td>
+                                        @else
+                                            <td>{{$turn->health_hero}}</td>
+                                        @endif
+                                        <td class="@if($loop->last && $turn->attacker_id == $turn->hero_id) attacker-name @endif">{{$turn->hero->name}}</td>
                                         <td class="text-success">
                                             @if($turn->used_skills->isNotEmpty())
                                                 @foreach($turn->used_skills as $skill)
@@ -48,12 +68,22 @@
                                                 @endforeach
                                             @endif
                                         </td>
-                                        <td class="text-right">{{$turn->damage_monster}}</td>
-                                        <td class="text-center"><progress value="0" max="100" style="transform: rotate(180deg);"></progress></td>
-                                        <td>{{$turn->damage_hero}}</td>
+                                        <td class="text-right"><span class="@if($loop->last) hidden-damage @endif">{{$turn->damage_monster}}</span></td>
+                                        <td class="text-center">
+                                            @if($turn->status != 'finished')
+                                                <progress value="20" max="100" class="@if($turn->attacker_id == $turn->monster_id) back-progress @endif"></progress>
+                                            @else
+                                                <span><b>game over on {{$turn->turn}} turn</b></span>
+                                            @endif
+                                        </td>
+                                        <td><span class="@if($loop->last) hidden-damage @endif">{{$turn->damage_hero}}</span></td>
                                         <td></td>
-                                        <td class="text-right">{{$turn->monster->name}}</td>
-                                        <td>{{$turn->health_monster}}</td>
+                                        <td class="text-right @if($loop->last && $turn->attacker_id == $turn->monster_id) attacker-name @endif">{{$turn->monster->name}}</td>
+                                        @if($loop->last)
+                                            <td data="{{$turn->health_monster}}">{{isset($startProperties) ? $startProperties->monster->health : ''}}</td>
+                                        @else
+                                            <td>{{$turn->health_monster}}</td>
+                                        @endif
                                     </tr>
                                 @endforeach
                                 </tbody>

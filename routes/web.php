@@ -29,4 +29,7 @@ Route::get('/play', 'PlayController@index')
 Route::get('/new', 'PlayController@newGame')
     ->name('new');
 
+Route::get('/next', 'PlayController@turn')
+    ->name('next');
+
 
