@@ -4,6 +4,31 @@
 
 @section('styles')
     <style>
+        @keyframes attack {
+            0%   {
+                opacity: 1;
+                font-weight: normal;
+            }
+            25%  {
+                opacity: 0.4;
+                font-weight: bold;
+                color: red;
+            }
+            50%  {
+                opacity: 1;
+                font-weight: normal;
+            }
+            75%  {
+                opacity: 0.4;
+                font-weight: bold;
+                color: red;
+            }
+            100% {
+                opacity: 1;
+                font-weight: normal;
+            }
+        }
+
         .hidden-damage {
             display: none;
         }
@@ -13,9 +38,15 @@
         }
 
         .attacker-name{
-            color: red;
+            animation-name: attack;
+            animation-duration: 1.5s;
         }
     </style>
+@endsection
+
+@section('script')
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous" defer></script>
+    <script src="{{asset('js/event.js')}}" defer></script>
 @endsection
 
 @section('content')
@@ -71,7 +102,7 @@
                                         <td class="text-right"><span class="@if($loop->last) hidden-damage @endif">{{$turn->damage_monster}}</span></td>
                                         <td class="text-center">
                                             @if($turn->status != 'finished')
-                                                <progress value="20" max="100" class="@if($turn->attacker_id == $turn->monster_id) back-progress @endif"></progress>
+                                                <progress value="0" max="100" class="@if($turn->attacker_id == $turn->monster_id) back-progress @endif"></progress>
                                             @else
                                                 <span><b>game over on {{$turn->turn}} turn</b></span>
                                             @endif

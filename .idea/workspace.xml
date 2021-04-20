@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0e65ede-2695-404f-8528-ebd14032e135" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/js/event.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PlayController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PlayController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/Engine.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/Engine.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_19_114907_create_alleop_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_19_114907_create_alleop_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/play.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/play.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +15,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -169,7 +173,7 @@
       <option name="presentableId" value="Default" />
       <updated>1618810830901</updated>
       <workItem from="1618810832250" duration="16493000" />
-      <workItem from="1618835227649" duration="45651000" />
+      <workItem from="1618835227649" duration="49036000" />
     </task>
     <task id="LOCAL-00001" summary="init database and seeder">
       <created>1618820938614</created>
@@ -206,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618899650164</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="view is ready">
+      <created>1618908395956</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618908395956</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,17 +231,18 @@
     <MESSAGE value="ready to battle" />
     <MESSAGE value="implement engine" />
     <MESSAGE value="engine working" />
-    <option name="LAST_COMMIT_MESSAGE" value="engine working" />
+    <MESSAGE value="view is ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="view is ready" />
   </component>
   <component name="WindowStateProjectService">
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1618898796408">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1618898796408" />
-    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1618899648274">
+    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1618908393333">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1618899648274" />
+    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1618908393333" />
     <state x="394" y="63" key="NewPhpClassDialog" timestamp="1618898765853">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -239,9 +251,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="476" y="263" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1618881759668" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1618899653212">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1618908400116">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1618899653212" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1618908400116" />
   </component>
 </project>
