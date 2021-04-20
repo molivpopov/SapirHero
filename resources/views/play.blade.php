@@ -48,9 +48,9 @@
                                                 @endforeach
                                             @endif
                                         </td>
-                                        <td class="text-right">73</td>
+                                        <td class="text-right">{{$turn->damage_monster}}</td>
                                         <td class="text-center"><progress value="0" max="100" style="transform: rotate(180deg);"></progress></td>
-                                        <td>22</td>
+                                        <td>{{$turn->damage_hero}}</td>
                                         <td></td>
                                         <td class="text-right">{{$turn->monster->name}}</td>
                                         <td>{{$turn->health_monster}}</td>

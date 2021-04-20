@@ -13,7 +13,9 @@ class TestController extends Controller
 
         $ss = Alleop::with('hero', 'monster')->find(1);
         $k=5;
-        $ss = null ?? $k+1;
-        dd($ss);
+        $l = 'monster';
+        $kpr = 12;
+//        $ss = null ?? $k+1;
+        dd($ss->($l));
     }
 }

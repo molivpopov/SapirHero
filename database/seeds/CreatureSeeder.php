@@ -16,20 +16,20 @@ class CreatureSeeder extends Seeder
             [
                 'name' => 'Vaderus',
                 'type' => 'hero',
-                'health' => [70,100],
-                'strength' => [70,80],
-                'speed' => [40,50],
-                'defence' => [45,55],
-                'luck' => [10,30]
+                'health' => '70-100',
+                'strength' => '70-80',
+                'speed' => '40-50',
+                'defence' => '45-55',
+                'luck' => '10-30'
             ],
             [
                 'name' => 'wild beast',
                 'type' => 'monster',
-                'health' => [60,90],
-                'strength' => [60,90],
-                'defence' => [40,60],
-                'speed' => [40,60],
-                'luck' => [25,40]
+                'health' => '60-90',
+                'strength' => '60-90',
+                'defence' => '40-60',
+                'speed' => '40-60',
+                'luck' => '25-40'
             ],
         ];
 

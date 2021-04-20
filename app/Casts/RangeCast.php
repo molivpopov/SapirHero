@@ -32,6 +32,7 @@ class RangeCast implements CastsAttributes
      */
     public function set($model, $key, $value, $attributes)
     {
-        return implode('-', $value);
+//        return implode('-', $value); why
+        return $value;
     }
 }
