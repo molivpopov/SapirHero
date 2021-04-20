@@ -16,20 +16,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('test/', 'TestController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')
-    ->name('home');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', 'HomeController@index')
+        ->name('home');
 
-Route::get('/play', 'PlayController@index')
-    ->name('play');
+    Route::get('/play', 'PlayController@index')
+        ->name('play');
 
-Route::get('/new', 'PlayController@newGame')
-    ->name('new');
+    Route::get('/new', 'PlayController@newGame')
+        ->name('new');
 
-Route::get('/next', 'PlayController@turn')
-    ->name('next');
+    Route::get('/next', 'PlayController@turn')
+        ->name('next');
+});
 
 
