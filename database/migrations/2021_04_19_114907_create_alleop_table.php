@@ -18,11 +18,13 @@ class CreateAlleopTable extends Migration
             $table->unsignedInteger('game');
             $table->unsignedInteger('turn');
             $table->unsignedBigInteger('hero_id');
-            $table->float('health_hero');
+            $table->float('health_hero')->default(0);
+            $table->float('damage_hero')->nullable();
             $table->string('used_skills')->nullable();
             $table->unsignedBigInteger('monster_id');
-            $table->float('health_monster');
-            $table->enum('status', ['play', 'finished']);
+            $table->float('health_monster')->default(0);
+            $table->float('damage_monster')->nullable();
+            $table->enum('status', ['playing', 'finished', 'archived']);
             $table->timestamps();
             $table->foreign('hero_id')
                 ->references('id')->on('creatures')

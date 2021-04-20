@@ -16,6 +16,8 @@ class CreateSkillsTable extends Migration
         Schema::create('skills', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->float('damage_coefficient')->default(1);
+            $table->float('attack_coefficient')->default(1);
             $table->unsignedSmallInteger('chance')->default(10);
             $table->text('description')->nullable();
             $table->string('icon');

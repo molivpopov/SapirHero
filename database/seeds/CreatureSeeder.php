@@ -29,7 +29,7 @@ class CreatureSeeder extends Seeder
                 'strength' => [60,90],
                 'defence' => [40,60],
                 'speed' => [40,60],
-                'luck' => [10,30]
+                'luck' => [25,40]
             ],
         ];
 

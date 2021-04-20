@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">
                         @if(isset($alleop) && $alleop->isNotEmpty())
@@ -24,7 +24,9 @@
                                     <th style="width: 4%"><i class="fas fa-heart text-danger"></i></th>
                                     <th style="width: 10%">hero</th>
                                     <th style="width: 7%"></th>
+                                    <th style="width: 7%" class="text-right"><i class="fas fa-long-arrow-alt-right"></i></th>
                                     <th class="text-center">attack</th>
+                                    <th style="width: 7%"><i class="fas fa-long-arrow-alt-left"></i></th>
                                     <th style="width: 7%"></th>
                                     <th class="text-right">monster</th>
                                     <th style="width: 4%"><i class="fas fa-heart text-info"></i></th>
@@ -46,7 +48,9 @@
                                                 @endforeach
                                             @endif
                                         </td>
-                                        <td class="text-center"><progress value="25" max="100" style="transform: rotate(180deg);"></progress></td>
+                                        <td class="text-right">73</td>
+                                        <td class="text-center"><progress value="0" max="100" style="transform: rotate(180deg);"></progress></td>
+                                        <td>22</td>
                                         <td></td>
                                         <td class="text-right">{{$turn->monster->name}}</td>
                                         <td>{{$turn->health_monster}}</td>

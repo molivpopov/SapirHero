@@ -18,6 +18,8 @@ class Alleop extends Model
         'health_monster',
         'status',
         'used_skills',
+        'damage_hero',
+        'damage_monster',
     ];
 
     protected $casts = ['used_skills' => UsedSkills::class];
